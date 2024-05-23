@@ -2,6 +2,7 @@
 
 {
   imports = [ # Include the results of the hardware scan.
+    inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
     {
@@ -21,7 +22,7 @@
 
   security.polkit.enable = true;
 
-  networking.hostName = "nixos-pc";
+  networking.hostName = "nixos-sp8";
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -41,8 +42,6 @@
   # Display
   gnome.enable = true;
   
-  nvidia.enable = true;
-
   users.users.dave = {
     isNormalUser = true;
     description = "dave";

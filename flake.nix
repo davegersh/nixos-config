@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    
+
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs { inherit system; };
@@ -24,11 +24,7 @@
         };
         sp8 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [
-            nixos-hardware.nixosModules.microsoft-surface-pro-intel
-            ./hosts/sp8/configuration.nix 
-            ./modules/nixos 
-          ];
+          modules = [ ./hosts/sp8/configuration.nix ./modules/nixos ];
         };
       };
 
