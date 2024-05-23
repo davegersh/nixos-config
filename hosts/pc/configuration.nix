@@ -76,11 +76,6 @@
     dunst
     neofetch
 
-    alacritty
-    
-    #rust
-    rustup
-
     # utilities
     shutter
     peek
