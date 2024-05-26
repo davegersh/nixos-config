@@ -3,8 +3,9 @@
 rec {
   home.packages = with pkgs.gnomeExtensions; [
     blur-my-shell
-    arcmenu
-    forge
+    pop-shell
+    unite
+    rounded-window-corners
   ];
 
   # To get these settings so that you can add them to your configuration after manually configuring them

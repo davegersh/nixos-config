@@ -48,7 +48,7 @@
   };
 
   # Display
-  i3.enable = true;
+  gnome.enable = true;
   
   nvidia.enable = true;
 
