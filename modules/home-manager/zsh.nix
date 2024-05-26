@@ -1,7 +1,11 @@
 { config, pkgs, ... }:
 
 {
-  programs.starship.enable = true;
+  programs.starship = {
+    enable = true;
+    enableZshIntegration = true;
+    enableBashIntegration = true;
+  };
 
   programs.zsh = {
     enable = true;
@@ -31,10 +35,6 @@
       nv = "nvim";
       snv = "sudo nvim";
     };
-
-    initExtra = ''
-      eval "$(starship init zsh)"
-    '';
 
     history.size = 10000;
     history.path = "${config.xdg.dataHome}/zsh/history";

@@ -18,6 +18,7 @@
       rofi
       picom
       bumblebee-status
+      feh
     ];
 
   };
