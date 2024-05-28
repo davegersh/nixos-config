@@ -6,7 +6,6 @@
     ./git.nix
     ./gtk.nix
     ./zsh.nix
-    ./i3.nix
     ./gnome.nix
     ./alacritty.nix
     ./chromium.nix

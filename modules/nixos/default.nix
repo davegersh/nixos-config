@@ -7,7 +7,6 @@
     ./fonts.nix
     ./python.nix
     ./network.nix
-    ./i3.nix
     ./gnome.nix
   ];
 }
