@@ -12,8 +12,8 @@
     };
 
     # exclude a lot of the gnome extra stuff that gets installed (good!)
-    environment.gnome.excludePackages = (with pkgs; [ gnome-photos gnome-tour gedit])
-      ++ (with pkgs.gnome; [
+    environment.gnome.excludePackages =
+      (with pkgs; [ gnome-photos gnome-tour gedit ]) ++ (with pkgs.gnome; [
         cheese # webcam tool
         gnome-music
         epiphany # web browser

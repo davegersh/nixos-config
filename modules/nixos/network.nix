@@ -1,14 +1,16 @@
 { config, pkgs, ... }:
 
 {
-  networking.networkmanager.enable = true;
+  networking.networkmanager = {
+    enable = true;
+    wifi.powersave = false;
+    wifi.scanRandMacAddress = false;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
-  
+
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
-
-  environment.systemPackages = with pkgs; [ networkmanagerapplet ];
 }

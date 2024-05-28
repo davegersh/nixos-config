@@ -10,7 +10,7 @@
 
         statusCommand =
           "bumblebee-status -m pomodoro pasink pasource date time -t gruvbox";
-       
+
         fonts = {
           names = [ "JetBrainsMonoNerdFont" ];
           style = "Regular";
@@ -21,21 +21,21 @@
           background = "#1d2021";
           statusline = "#d79921";
 
-          focusedWorkspace.border = "#d79921"; #yellow
-          focusedWorkspace.background = "#d79921"; 
-          focusedWorkspace.text = "#1d2021"; #darkgray
+          focusedWorkspace.border = "#d79921"; # yellow
+          focusedWorkspace.background = "#d79921";
+          focusedWorkspace.text = "#1d2021"; # darkgray
 
           activeWorkspace.border = "#1d2021";
           activeWorkspace.background = "#1d2021";
-          activeWorkspace.text = "#458588"; #blue
+          activeWorkspace.text = "#458588"; # blue
 
           inactiveWorkspace.border = "#1d2021";
           inactiveWorkspace.background = "#1d2021";
           inactiveWorkspace.text = "#458588";
 
-          urgentWorkspace.border = "#cc241d"; #red
+          urgentWorkspace.border = "#cc241d"; # red
           urgentWorkspace.background = "#cc241d";
-          urgentWorkspace.text = "#282828"; #bg
+          urgentWorkspace.text = "#282828"; # bg
         };
 
       }];
@@ -68,7 +68,7 @@
           always = true;
           notification = false;
         }
-        
+
         {
           command = "picom --config ~/.config/picom/picom.conf";
           always = true;

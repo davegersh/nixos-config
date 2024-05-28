@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, lib, inputs, ... }:
 
 {
   imports = [ # Include the results of the hardware scan.
@@ -13,6 +13,13 @@
       home-manager.users."dave" = import ./home.nix;
     }
   ];
+
+  # Surface Touchscreen + Pen Support
+  services.udev.packages = [ pkgs.iptsd ];
+  systemd.packages = [ pkgs.iptsd ];
+
+  # disable to prevent duplicate iptsd services
+  microsoft-surface.ipts.enable = lib.mkForce false;
 
   # Bootloader
   boot.loader.systemd-boot.enable = true;
@@ -41,7 +48,7 @@
 
   # Display
   gnome.enable = true;
-  
+
   users.users.dave = {
     isNormalUser = true;
     description = "dave";
@@ -62,9 +69,12 @@
     git
     wget
     gcc
-    nixfmt-classic
-    dunst
     neofetch
+
+    # nix utilities
+    nixfmt-classic
+    nil
+    nh
 
     # utilities
     shutter
