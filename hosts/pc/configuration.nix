@@ -13,6 +13,14 @@
     }
   ];
 
+  # Nix Storage Optimization
+  nix.settings.auto-optimise-store = true;
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than 14d";
+  };
+
   # Kernel
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -72,9 +80,13 @@
     git
     wget
     gcc
-    nixfmt-classic
-    dunst
     neofetch
+
+    # nix utilities
+    nixfmt-classic
+    nil
+    nh
+    nix-health
 
     # utilities
     shutter

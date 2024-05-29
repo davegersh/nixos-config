@@ -14,6 +14,7 @@
     spotify
     discord
     obsidian
+    
     rnote
     krita
   ];
