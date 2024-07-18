@@ -6,7 +6,7 @@
     extensions = with pkgs.vscode-extensions; [
       # highlighting
       jnoortheen.nix-ide
-      matklad.rust-analyzer
+      rust-lang.rust-analyzer
       tamasfe.even-better-toml
 
       #python

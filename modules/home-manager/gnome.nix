@@ -3,6 +3,7 @@
 rec {
   home.packages = with pkgs.gnomeExtensions; [
     blur-my-shell
+    appindicator
   ];
 
   # To get these settings so that you can add them to your configuration after manually configuring them
