@@ -20,6 +20,7 @@
       # other
       esbenp.prettier-vscode
       usernamehw.errorlens
+      arrterian.nix-env-selector
     ];
   };
 }

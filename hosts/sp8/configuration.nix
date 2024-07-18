@@ -87,10 +87,6 @@
     # utilities
     shutter
     peek
-
-    # rust
-    cargo
-    rustc
   ];
 
   # Before changing this value read the documentation for this option check out
