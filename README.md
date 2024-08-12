@@ -2,10 +2,10 @@
 
 This repo contains my entire config that is used to build my NixOS system!
 
-It currently contains the configs for both my main desktop pc (`/hosts/pc`) and my Surface Pro 8 laptop (`/hosts/sp8`).
+It currently contains the configs for my Framework 13 laptop (`/hosts/fw`).
 
 To use my config, just type the following command (with flakes enabled on your system):
 ```
 sudo nixos-rebuild switch --flake .#[hostname]
 ```
-Replace `[hostname]` with either one of the configurations located in the `flake.nix` file. Right now it's just `pc` and `sp8`.
+Replace `[hostname]` with either one of the configurations located in the `flake.nix` file. Right now it's just `fw`.

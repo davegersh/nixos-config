@@ -18,13 +18,9 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       nixosConfigurations = {
-        pc = nixpkgs.lib.nixosSystem {
+        fw = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          modules = [ ./hosts/pc/configuration.nix ./modules/nixos ];
-        };
-        sp8 = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = [ ./hosts/sp8/configuration.nix ./modules/nixos ];
+          modules = [ ./hosts/fw/configuration.nix ./modules/nixos ];
         };
       };
 

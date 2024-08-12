@@ -13,23 +13,19 @@
 
     # exclude a lot of the gnome extra stuff that gets installed (good!)
     environment.gnome.excludePackages =
-      (with pkgs; [ gnome-photos gnome-tour gedit ]) ++ (with pkgs.gnome; [
-        cheese # webcam tool
+      (with pkgs; [ gnome-photos gnome-tour gedit cheese epiphany geary yelp ]) ++ (with pkgs.gnome; [
         gnome-music
-        epiphany # web browser
-        geary # email reader
         gnome-characters
         tali # poker game
         iagno # go game
         hitori # sudoku game
         atomix # puzzle game
-        yelp # Help view
         gnome-contacts
         gnome-initial-setup
       ]);
 
     programs.dconf.enable = true;
 
-    environment.systemPackages = with pkgs; [ gnome.gnome-tweaks ];
+    environment.systemPackages = with pkgs; [ gnome-tweaks ];
   };
 }

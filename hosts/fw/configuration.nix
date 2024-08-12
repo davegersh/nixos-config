@@ -2,7 +2,7 @@
 
 {
   imports = [ # Include the results of the hardware scan.
-    inputs.nixos-hardware.nixosModules.microsoft-surface-pro-intel
+    inputs.nixos-hardware.nixosModules.framework-13-7040-amd
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
     {
@@ -14,12 +14,7 @@
     }
   ];
 
-  # Surface Touchscreen + Pen Support
-  services.udev.packages = [ pkgs.iptsd ];
-  systemd.packages = [ pkgs.iptsd ];
-
-  # disable to prevent duplicate iptsd services
-  microsoft-surface.ipts.enable = lib.mkForce false;
+  services.fwupd.enable = true;
 
   # Nix Storage Optimization
   nix.settings.auto-optimise-store = true;

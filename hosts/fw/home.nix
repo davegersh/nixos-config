@@ -14,6 +14,9 @@
     spotify
     discord
     obsidian
+
+    proton-pass
+    protonvpn-cli
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
