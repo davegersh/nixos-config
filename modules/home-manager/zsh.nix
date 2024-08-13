@@ -14,14 +14,13 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      ll = "ls -alh";
+      ll = "exa -alh";
 
-      upgrade = "sudo nixos-rebuild switch --upgrade";
-      update = "sudo nixos-rebuild switch";
-      nixconf = "sudo nvim /etc/nixos/configuration.nix";
+      upfw = "sudo nixos-rebuild switch --flake .#fw";
       ns = "nix-shell --command zsh";
-      nsr = "nix-shell --command zsh --run ";
+      nsr = "nix-shell --command zsh --run";
       nsp = "nix-shell --command zsh -p";
+      pkg = "nix search nixpkgs";
 
       hupdate = "home-manager switch";
 

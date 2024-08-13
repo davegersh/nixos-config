@@ -16,6 +16,10 @@
 
   services.fwupd.enable = true;
 
+  services.udisks2.enable = true;
+  services.gvfs.enable = true;
+  programs.xfconf.enable = true;
+
   # Nix Storage Optimization
   nix.settings.auto-optimise-store = true;
   nix.gc = {
@@ -25,8 +29,14 @@
   };
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+    };
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -83,6 +93,7 @@
     shutter
     peek
     brightnessctl
+    eza
   ];
 
   # Before changing this value read the documentation for this option check out

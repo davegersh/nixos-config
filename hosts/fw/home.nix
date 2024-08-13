@@ -22,7 +22,8 @@
     mako
     libnotify
     swww
-    pcmanfm
+    xfce.thunar
+    xfce.thunar-volman
     networkmanagerapplet
   ];
 

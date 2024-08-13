@@ -22,8 +22,9 @@ in
     settings = {
       exec-once = ''${startupScript}/bin/start'';
 
-      monitor=",preferred,auto,1.333334";
-            # unscale XWayland
+      monitor=",preferred,auto,1.175";
+
+      # unscale XWayland
       xwayland = {
         force_zero_scaling = true;
       };
@@ -99,7 +100,7 @@ in
       };
 
       decoration = {
-        rounding = 10;
+        rounding = 15;
 
         active_opacity = 1.0;
         inactive_opacity = 0.9;

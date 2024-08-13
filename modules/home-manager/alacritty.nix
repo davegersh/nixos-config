@@ -42,7 +42,7 @@
       font = {
         normal.family = "JetBrainsMono Nerd Font";
         normal.style = "Regular";
-        size = 10;
+        size = 14;
       };
 
       window.opacity = 0.9;
