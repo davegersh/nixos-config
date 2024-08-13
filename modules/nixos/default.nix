@@ -3,10 +3,10 @@
 { lib, ... }: {
   imports = [
     ./audio.nix
-    ./nvidia.nix
     ./fonts.nix
     ./python.nix
     ./network.nix
-    ./gnome.nix
+    ./hyprland.nix
+    ./greetd.nix
   ];
 }

@@ -11,5 +11,7 @@
     ./chromium.nix
     ./neovim.nix
     ./vscode.nix
+    ./hyprland.nix
+    ./waybar.nix
   ];
 }

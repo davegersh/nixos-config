@@ -17,6 +17,13 @@
 
     proton-pass
     protonvpn-cli
+
+    wofi
+    mako
+    libnotify
+    swww
+    pcmanfm
+    networkmanagerapplet
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

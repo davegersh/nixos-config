@@ -32,7 +32,7 @@
 
   security.polkit.enable = true;
 
-  networking.hostName = "nixos-sp8";
+  networking.hostName = "nixos-fw";
 
   time.timeZone = "America/New_York";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -50,7 +50,7 @@
   };
 
   # Display
-  gnome.enable = true;
+  hyprland.enable = true;
 
   users.users.dave = {
     isNormalUser = true;
@@ -82,6 +82,7 @@
     # utilities
     shutter
     peek
+    brightnessctl
   ];
 
   # Before changing this value read the documentation for this option check out

@@ -6,5 +6,9 @@
 
   security.rtkit.enable = true;
 
-  environment.systemPackages = with pkgs; [ pavucontrol ];
+  environment.systemPackages = with pkgs; [ 
+    pavucontrol # audio gui
+    pamixer # changing volume, muting
+    playerctl # play, pause
+  ];
 }
