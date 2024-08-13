@@ -119,7 +119,7 @@
           min-height: 0px;
         }
         window#waybar {
-          background: rgba(0,0,0,0);
+          background: rgba(20,20,20,0.6);
         }
         #workspaces {
           margin: 4px 4px;

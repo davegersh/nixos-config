@@ -8,4 +8,8 @@
   };
 
   networking.firewall.enable = true;
+
+  environment.systemPackages = with pkgs; [ 
+    networkmanagerapplet #nm-applet for easy network management
+  ];
 }

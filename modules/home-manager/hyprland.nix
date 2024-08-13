@@ -6,11 +6,11 @@ let
 
     swww-daemon &
 
-    sleep 1
+    sleep 0.1
 
     swww img /nixos-config/wallpapers/webb_2year.jpg &
     nm-applet &
-
+    blueman-applet &
   '';
 in
 {
@@ -36,11 +36,17 @@ in
 
       "$mod" = "SUPER";
       "$terminal" = "alacritty";
-      "$menu" = "wofi --show drun";
+      "$menu" = "rofi -show drun -show-icons";
+
+      bindl = [
+        ",switch:Lid Switch, exec, hyprlock"
+      ];
+
       bind = [
         "$mod, RETURN, exec, $terminal"
         "$mod, D, exec, $menu"
         "$mod, V, togglefloating,"
+        "$mod, L, exec, hyprlock"
         "$mod SHIFT, Q, killactive,"
         "$mod SHIFT, X, exit,"
 

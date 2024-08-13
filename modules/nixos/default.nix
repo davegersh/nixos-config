@@ -8,5 +8,6 @@
     ./network.nix
     ./hyprland.nix
     ./greetd.nix
+    ./bluetooth.nix
   ];
 }

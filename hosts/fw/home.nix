@@ -18,13 +18,10 @@
     proton-pass
     protonvpn-cli
 
-    wofi
-    mako
-    libnotify
-    swww
+    rofi-wayland
+    swww # background manager
     xfce.thunar
     xfce.thunar-volman
-    networkmanagerapplet
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

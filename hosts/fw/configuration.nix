@@ -14,11 +14,13 @@
     }
   ];
 
+  # framework firmware management
   services.fwupd.enable = true;
 
+  # disk management / mounting
   services.udisks2.enable = true;
   services.gvfs.enable = true;
-  programs.xfconf.enable = true;
+  programs.xfconf.enable = true; # ensures xfce configs actually save
 
   # Nix Storage Optimization
   nix.settings.auto-optimise-store = true;
@@ -35,6 +37,7 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
+      fontSize = 52;
     };
   };
 

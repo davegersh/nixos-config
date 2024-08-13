@@ -12,5 +12,7 @@
     ./vscode.nix
     ./hyprland.nix
     ./waybar.nix
+    ./hyprlock.nix
+    ./mako.nix
   ];
 }
