@@ -30,6 +30,13 @@
 
   };
 
+  home.pointerCursor = {
+    gtk.enable = true;
+    package = pkgs.hackneyed;
+    name = "Hackneyed";
+    size = 24;
+  };
+
   home.sessionVariables = {
     EDITOR = "code";
     BROWSER = "chromium";

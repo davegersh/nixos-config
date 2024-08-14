@@ -37,7 +37,6 @@
       enable = true;
       efiSupport = true;
       device = "nodev";
-      fontSize = 52;
     };
   };
 

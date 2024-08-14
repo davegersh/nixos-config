@@ -8,7 +8,7 @@ let
 
     sleep 0.1
 
-    swww img /nixos-config/wallpapers/webb_2year.jpg &
+    swww img /nixos-config/wallpapers/webb_carina.jpg &
     nm-applet &
     blueman-applet &
   '';
@@ -29,9 +29,16 @@ in
         force_zero_scaling = true;
       };
 
+      windowrulev2 = [
+        "opacity 0.925 0.925,class:^(code-url-handler)$" #vscode
+        "opacity 0.925 0.925,class:^(obsidian)$"
+      ];
+
       env = [
-        "GDK_SCALE,1"
-        "XCURSOR_SIZE,128"
+        "GDK_SCALE,2"
+        "GDK_DPI_SCALE,1.175"
+        "QT_AUTO_SCREEN_SCALE_FACTOR=1"
+        "XCURSOR_SIZE,24"
       ];
 
       "$mod" = "SUPER";
@@ -46,7 +53,7 @@ in
         "$mod, RETURN, exec, $terminal"
         "$mod, D, exec, $menu"
         "$mod, V, togglefloating,"
-        "$mod, L, exec, hyprlock"
+        "$mod, F12, exec, hyprlock"
         "$mod SHIFT, Q, killactive,"
         "$mod SHIFT, X, exit,"
 
@@ -72,15 +79,20 @@ in
         "$mod SHIFT, 9, movetoworkspace, 9"
         "$mod SHIFT, 0, movetoworkspace, 10"
         
-        "$mod, L, resizeactive, 20 0"
-        "$mod, H, resizeactive, -20 0"
-        "$mod, J, resizeactive, 0 20"
-        "$mod, K, resizeactive, 0 -20"
+        "$mod ALT, L, resizeactive, 30 0"
+        "$mod ALT, H, resizeactive, -30 0"
+        "$mod ALT, J, resizeactive, 0 30"
+        "$mod ALT, K, resizeactive, 0 -30"
 
-        "$mod SHIFT, L, movewindow, l"
-        "$mod SHIFT, H, movewindow, r"
+        "$mod SHIFT, L, movewindow, r"
+        "$mod SHIFT, H, movewindow, l"
         "$mod SHIFT, J, movewindow, u"
         "$mod SHIFT, K, movewindow, d"
+
+        "$mod, L, movefocus, r"
+        "$mod, H, movefocus, l"
+        "$mod, J, movefocus, u"
+        "$mod, K, movefocus, d"
 
         ", XF86AudioRaiseVolume, exec, pamixer -i 5"
         ", XF86AudioLowerVolume, exec, pamixer -d 5"
