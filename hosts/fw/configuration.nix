@@ -92,7 +92,7 @@
     nh
 
     # utilities
-    shutter
+    hyprshot
     peek
     brightnessctl
     eza
