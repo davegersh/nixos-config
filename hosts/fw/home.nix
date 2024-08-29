@@ -38,9 +38,9 @@
   };
 
   home.sessionVariables = {
-    EDITOR = "code";
+    EDITOR = "hx";
     BROWSER = "chromium";
-    TERMINAL = "alacritty";
+    TERMINAL = "kitty";
   };
 
   # Let Home Manager install and manage itself.

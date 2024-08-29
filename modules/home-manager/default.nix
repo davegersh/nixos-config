@@ -11,9 +11,11 @@
     ./chromium.nix
     ./neovim.nix
     ./vscode.nix
+    ./helix.nix
     ./hyprland.nix
     ./waybar.nix
     ./hyprlock.nix
     ./mako.nix
+    ./zellij.nix
   ];
 }
