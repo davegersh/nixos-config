@@ -6,7 +6,8 @@
     ./git.nix
     ./gtk.nix
     ./zsh.nix
-    ./alacritty.nix
+    ./kitty.nix
+    ./yazi.nix
     ./chromium.nix
     ./neovim.nix
     ./vscode.nix

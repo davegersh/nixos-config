@@ -96,6 +96,7 @@
     peek
     brightnessctl
     eza
+    libreoffice
   ];
 
   # Before changing this value read the documentation for this option check out

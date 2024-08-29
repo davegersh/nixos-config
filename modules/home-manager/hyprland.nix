@@ -31,6 +31,7 @@ in
 
       windowrulev2 = [
         "opacity 0.925 0.925,class:^(code-url-handler)$" #vscode
+        "opacity 0.925 0.925,class:^(kitty)$" #vscode
         "opacity 0.925 0.925,class:^(obsidian)$"
       ];
 
@@ -42,7 +43,7 @@ in
       ];
 
       "$mod" = "SUPER";
-      "$terminal" = "alacritty";
+      "$terminal" = "kitty";
       "$menu" = "rofi -show drun -show-icons";
 
       bindl = [

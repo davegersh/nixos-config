@@ -4,6 +4,7 @@
   imports = [
     ./audio.nix
     ./fonts.nix
+    ./ld.nix
     ./python.nix
     ./network.nix
     ./hyprland.nix
