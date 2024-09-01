@@ -21,8 +21,7 @@
       nsr = "nix-shell --command zsh --run";
       nsp = "nix-shell --command zsh -p";
       pkg = "nix search nixpkgs";
-
-      hupdate = "home-manager switch";
+      nix-conf = "zellij a nixos-config";
 
       sus = "systemctl suspend";
       bios = "systemctl reboot --firmware-setup";
@@ -31,8 +30,11 @@
 
       ".." = "cd ..";
       cdc = "clear && cd";
-      nv = "nvim";
-      snv = "sudo nvim";
+
+      shx = "sudo hx";
+
+      zj = "zellij";
+      zjc = "zellij --layout compact";
     };
 
     history.size = 10000;

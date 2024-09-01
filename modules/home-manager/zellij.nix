@@ -3,9 +3,6 @@
 {
   programs.zellij = {
     enable = true;
-    enableZshIntegration = true;
-    settings = {
-      theme = "gruvbox-dark";
-    };
+    settings = { theme = "gruvbox-dark"; };
   };
 }
