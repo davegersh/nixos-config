@@ -1,9 +1,7 @@
 { config, pkgs, ... }:
 
-let 
+let
   startupScript = pkgs.pkgs.writeShellScriptBin "start" ''
-    waybar &
-
     swww-daemon &
 
     sleep 0.1
@@ -11,27 +9,25 @@ let
     swww img /nixos-config/wallpapers/webb_carina.jpg &
     nm-applet &
     blueman-applet &
+    waybar &
   '';
-in
-{
+in {
   wayland.windowManager.hyprland = {
     enable = true;
     xwayland.enable = true;
     systemd.enable = true;
 
     settings = {
-      exec-once = ''${startupScript}/bin/start'';
+      exec-once = "${startupScript}/bin/start";
 
-      monitor=",preferred,auto,1.175";
+      monitor = ",preferred,auto,1.175,bitdepth,10";
 
       # unscale XWayland
-      xwayland = {
-        force_zero_scaling = true;
-      };
+      xwayland = { force_zero_scaling = true; };
 
       windowrulev2 = [
-        "opacity 0.925 0.925,class:^(code-url-handler)$" #vscode
-        "opacity 0.925 0.925,class:^(kitty)$" #vscode
+        "opacity 0.925 0.925,class:^(code-url-handler)$" # vscode
+        "opacity 0.925 0.925,class:^(kitty)$" # vscode
         "opacity 0.925 0.925,class:^(obsidian)$"
       ];
 
@@ -46,9 +42,7 @@ in
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun -show-icons";
 
-      bindl = [
-        ",switch:Lid Switch, exec, hyprlock"
-      ];
+      bindl = [ ",switch:Lid Switch, exec, hyprlock" ];
 
       bind = [
         "$mod, RETURN, exec, $terminal"
@@ -58,28 +52,30 @@ in
         "$mod SHIFT, Q, killactive,"
         "$mod SHIFT, X, exit,"
 
-        "$mod, 1, workspace, 1"
-        "$mod, 2, workspace, 2"
-        "$mod, 3, workspace, 3"
-        "$mod, 4, workspace, 4"
-        "$mod, 5, workspace, 5"
-        "$mod, 6, workspace, 6"
-        "$mod, 7, workspace, 7"
-        "$mod, 8, workspace, 8"
-        "$mod, 9, workspace, 9"
-        "$mod, 0, workspace, 10"
+        "$mod, 1, workspace, e~1"
+        "$mod, 2, workspace, e~2"
+        "$mod, 3, workspace, e~3"
+        "$mod, 4, workspace, e~4"
+        "$mod, 5, workspace, e~5"
+        "$mod, 6, workspace, e~6"
+        "$mod, 7, workspace, e~7"
+        "$mod, 8, workspace, e~8"
+        "$mod, 9, workspace, e~9"
+        "$mod, 0, workspace, e~10"
 
-        "$mod SHIFT, 1, movetoworkspace, 1"
-        "$mod SHIFT, 2, movetoworkspace, 2"
-        "$mod SHIFT, 3, movetoworkspace, 3"
-        "$mod SHIFT, 4, movetoworkspace, 4"
-        "$mod SHIFT, 5, movetoworkspace, 5"
-        "$mod SHIFT, 6, movetoworkspace, 6"
-        "$mod SHIFT, 7, movetoworkspace, 7"
-        "$mod SHIFT, 8, movetoworkspace, 8"
-        "$mod SHIFT, 9, movetoworkspace, 9"
-        "$mod SHIFT, 0, movetoworkspace, 10"
-        
+        "$mod SHIFT, 1, movetoworkspace, e~1"
+        "$mod SHIFT, 2, movetoworkspace, e~2"
+        "$mod SHIFT, 3, movetoworkspace, e~3"
+        "$mod SHIFT, 4, movetoworkspace, e~4"
+        "$mod SHIFT, 5, movetoworkspace, e~5"
+        "$mod SHIFT, 6, movetoworkspace, e~6"
+        "$mod SHIFT, 7, movetoworkspace, e~7"
+        "$mod SHIFT, 8, movetoworkspace, e~8"
+        "$mod SHIFT, 9, movetoworkspace, e~9"
+        "$mod SHIFT, 0, movetoworkspace, e~10"
+
+        "$mod SHIFT, n, movetoworkspace, emptyn"
+
         "$mod ALT, L, resizeactive, 30 0"
         "$mod ALT, H, resizeactive, -30 0"
         "$mod ALT, J, resizeactive, 0 30"
@@ -104,10 +100,11 @@ in
         ", XF86AudioNext, exec, playerctl next"
         ", XF86AudioPrev, exec, playerctl previous"
 
-
-        ", XF86MonBrightnessUp, exec, brightnessctl s +5%"
-        ", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl s +3%"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 3%-"
       ];
+
+      bindm = [ "$mod, mouse:272, movewindow" ];
 
       general = {
         gaps_in = 5;
@@ -128,10 +125,10 @@ in
         "col.shadow" = "rgba(00000099)";
 
         blur = {
-            enabled = true;
-            size = 5;
-            passes = 1;
-            vibrancy = 0.1696;
+          enabled = true;
+          size = 5;
+          passes = 1;
+          vibrancy = 0.1696;
         };
       };
 
@@ -152,14 +149,14 @@ in
         ];
       };
 
-      misc = { 
-          force_default_wallpaper = 0; # Set to 0 or 1 to disable the anime mascot wallpapers
-          disable_hyprland_logo = true; # If true disables the random hyprland logo / anime girl background. :(
+      misc = {
+        force_default_wallpaper =
+          0; # Set to 0 or 1 to disable the anime mascot wallpapers
+        disable_hyprland_logo =
+          true; # If true disables the random hyprland logo / anime girl background. :(
       };
 
-      gestures = {
-        workspace_swipe = true;
-      };
+      gestures = { workspace_swipe = true; };
 
       input = {
         touchpad = {

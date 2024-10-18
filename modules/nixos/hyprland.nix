@@ -5,7 +5,15 @@
 
   config = lib.mkIf config.hyprland.enable {
     programs.hyprland.enable = true;
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";  
-    security.pam.services.hyprlock = {};
+    programs.hyprland.xwayland.enable = true;
+    programs.xwayland.enable = true;
+    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    security.pam.services.hyprlock = { };
+
+    xdg.portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    };
   };
 }

@@ -15,7 +15,7 @@
   ];
 
   # framework firmware management
-  services.fwupd.enable = true;
+  services.fwupd.enable = true; # test
 
   # disk management / mounting
   services.udisks2.enable = true;
@@ -97,6 +97,10 @@
     brightnessctl
     eza
     libreoffice
+
+    # rust
+    cargo
+    rustc
   ];
 
   # Before changing this value read the documentation for this option check out

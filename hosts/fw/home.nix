@@ -6,17 +6,15 @@
 
   home.stateVersion = "23.11";
 
-  imports = [
-    inputs.self.outputs.homeManagerModules.default
-  ];
+  imports = [ inputs.self.outputs.homeManagerModules.default ];
 
   home.packages = with pkgs; [
     spotify
     discord
     obsidian
 
-    proton-pass
     protonvpn-cli
+    protonmail-desktop
 
     rofi-wayland
     swww # background manager
