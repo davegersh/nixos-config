@@ -6,7 +6,7 @@ let
 
     sleep 0.1
 
-    swww img /nixos-config/wallpapers/webb_carina.jpg &
+    swww img /nixos-config/wallpapers/weic2425a.jpg &
     nm-applet &
     blueman-applet &
     waybar &

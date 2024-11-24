@@ -20,6 +20,8 @@
     swww # background manager
     xfce.thunar
     xfce.thunar-volman
+
+    prismlauncher
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
