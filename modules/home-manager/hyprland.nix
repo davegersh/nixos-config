@@ -10,6 +10,7 @@ let
     nm-applet &
     blueman-applet &
     waybar &
+    morgen &
   '';
 in {
   wayland.windowManager.hyprland = {
@@ -40,7 +41,7 @@ in {
 
       "$mod" = "SUPER";
       "$terminal" = "kitty";
-      "$menu" = "rofi -show drun -show-icons";
+      "$menu" = "fuzzel";
 
       bindl = [ ",switch:Lid Switch, exec, hyprlock" ];
 
@@ -121,8 +122,8 @@ in {
         active_opacity = 1.0;
         inactive_opacity = 0.9;
 
-        shadow_offset = "0 5";
-        "col.shadow" = "rgba(00000099)";
+        # shadow_offset = "0 5";
+        # "col.shadow" = "rgba(00000099)";
 
         blur = {
           enabled = true;

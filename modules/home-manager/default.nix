@@ -17,5 +17,6 @@
     ./hyprlock.nix
     ./mako.nix
     ./zellij.nix
+    ./fuzzel.nix
   ];
 }

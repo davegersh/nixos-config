@@ -16,12 +16,13 @@
     protonvpn-cli
     protonmail-desktop
 
-    rofi-wayland
     swww # background manager
     xfce.thunar
     xfce.thunar-volman
 
     prismlauncher
+    morgen
+    bat
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

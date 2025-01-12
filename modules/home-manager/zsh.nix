@@ -33,6 +33,8 @@
 
       shx = "sudo hx";
 
+      cat = "bat";
+
       zj = "zellij";
       zjc = "zellij --layout compact";
     };
