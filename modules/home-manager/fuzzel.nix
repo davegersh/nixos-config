@@ -9,7 +9,7 @@
         terminal = "kitty -e";
       };
       colors = {
-        background = "222222c1";
+        background = "222222e0";
         text = "ebdbb2ff";
         prompt = "8ec07cff";
         input = "ebdbb2ff";

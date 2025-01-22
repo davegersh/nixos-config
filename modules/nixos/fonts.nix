@@ -1,10 +1,9 @@
 { config, pkgs, ... }:
 
 {
-  fonts.packages = with pkgs;
-    [
-      (nerdfonts.override {
-        fonts = [ "FiraCode" "JetBrainsMono" "DroidSansMono" ];
-      })
-    ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.droid-sans-mono
+  ];
 }

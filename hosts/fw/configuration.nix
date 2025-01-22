@@ -103,6 +103,8 @@
     rustc
   ];
 
+  programs.steam.enable = true;
+
   # Before changing this value read the documentation for this option check out
   # https://search.nixos.org/options?channel=23.11&show=system.stateVersion.
   system.stateVersion = "23.11"; # Did you read the comment?
