@@ -1,6 +1,7 @@
 # needed to allow automatic importing of all files in the nixos directory
 
-{ lib, ... }: {
+{ lib, ... }:
+{
   imports = [
     ./audio.nix
     ./fonts.nix
@@ -10,5 +11,6 @@
     ./hyprland.nix
     ./greetd.nix
     ./bluetooth.nix
+    ./niri.nix
   ];
 }

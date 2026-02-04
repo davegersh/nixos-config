@@ -1,13 +1,13 @@
-
 { config, pkgs, ... }:
 
-# handle linked libraries / DLLs 
+# handle linked libraries / DLLs
 {
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-        zlib
-        stdenv.cc.cc.lib
+      zlib
+      stdenv.cc.cc.lib
+      glib
     ];
   };
 }

@@ -1,7 +1,14 @@
-{ config, pkgs, lib, inputs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     inputs.nixos-hardware.nixosModules.framework-13-7040-amd
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
@@ -40,7 +47,12 @@
     };
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  boot.supportedFilesystems = [ "ntfs" ];
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   security.polkit.enable = true;
 
@@ -62,12 +74,14 @@
   };
 
   # Display
-  hyprland.enable = true;
-
   users.users.dave = {
     isNormalUser = true;
     description = "dave";
-    extraGroups = [ "networkmanager" "wheel" "audio" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+    ];
     packages = with pkgs; [ ];
   };
 
@@ -78,8 +92,17 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # Virtual Machines
+  programs.virt-manager.enable = true;
+
+  users.groups.libvirtd.members = [ "dave" ];
+  virtualisation.libvirtd.enable = true;
+  virtualisation.spiceUSBRedirection.enable = true;
+
+  # Packages
   environment.systemPackages = with pkgs; [
     # essentials
+    xwayland-satellite
     vim
     git
     wget
@@ -92,7 +115,6 @@
     nh
 
     # utilities
-    hyprshot
     peek
     brightnessctl
     eza
@@ -102,6 +124,33 @@
     cargo
     rustc
   ];
+
+  # Open network ports
+  networking.firewall.allowedTCPPorts = [
+    7000
+    7001
+    7100
+  ];
+  networking.firewall.allowedUDPPorts = [
+    5353
+    6000
+    6001
+    7011
+  ];
+
+  # To enable network-discovery
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true; # printing
+    openFirewall = true; # ensuring that firewall ports are open as needed
+    publish = {
+      enable = true;
+      addresses = true;
+      workstation = true;
+      userServices = true;
+      domain = true;
+    };
+  };
 
   programs.steam.enable = true;
 

@@ -3,22 +3,24 @@
 {
   services.mako = {
     enable = true;
-    anchor = "top-right";
-    backgroundColor = "#111111CF";
-    borderColor = "#00000000";
-    borderRadius = 5;
-    defaultTimeout = 5000;
-    font = "JetBrainsMonoNerdFont 11";
-    width = 350;
-    height = 125;
-    icons = true;
-    format = ''<b>%a ⏵</b> %s\n%b'';
+    settings = {
+      anchor = "top-right";
+      background-color = "#111111CF";
+      border-color = "#00000000";
+      border-radius = 5;
+      default-timeout = 5000;
+      font = "JetBrainsMonoNerdFont 11";
+      width = 350;
+      height = 125;
+      icons = true;
+      format = ''<b>%a ⏵</b> %s\n%b'';
+    };
     extraConfig = ''
-    [urgency=critical]
-    border-color=#b83333
-    anchor=top-center
-    border-size=5
-    default-timeout=0
+      [urgency=critical]
+      border-color=#b83333
+      anchor=top-center
+      border-size=5
+      default-timeout=0
     '';
   };
 

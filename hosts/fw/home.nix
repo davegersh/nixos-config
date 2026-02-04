@@ -1,4 +1,9 @@
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
   home.username = "dave";
@@ -13,7 +18,7 @@
     discord
     obsidian
 
-    protonvpn-cli
+    protonvpn-gui
     protonmail-desktop
 
     swww # background manager
@@ -21,8 +26,16 @@
     xfce.thunar-volman
 
     prismlauncher
-    morgen
     bat
+
+    ticktick
+
+    transcribe
+
+    obs-studio
+    vlc
+
+    zed-editor
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

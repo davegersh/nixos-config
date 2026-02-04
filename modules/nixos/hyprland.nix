@@ -1,4 +1,9 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 
 {
   options.hyprland.enable = lib.mkEnableOption "Enables Hyprland";
@@ -9,11 +14,5 @@
     programs.xwayland.enable = true;
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
     security.pam.services.hyprlock = { };
-
-    xdg.portal = {
-      enable = true;
-      xdgOpenUsePortal = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
-    };
   };
 }

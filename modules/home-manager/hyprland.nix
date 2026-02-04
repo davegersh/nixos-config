@@ -6,7 +6,7 @@ let
 
     sleep 0.1
 
-    swww img /nixos-config/wallpapers/weic2425a.jpg &
+    swww img /nixos-config/wallpapers/twr_meadow.jpg &
     nm-applet &
     blueman-applet &
     waybar &
@@ -49,6 +49,7 @@ in {
         "$mod, RETURN, exec, $terminal"
         "$mod, D, exec, $menu"
         "$mod, V, togglefloating,"
+        "$mod, F, fullscreen"
         "$mod, F12, exec, hyprlock"
         "$mod SHIFT, Q, killactive,"
         "$mod SHIFT, X, exit,"
@@ -114,6 +115,8 @@ in {
         border_size = 0;
 
         layout = "dwindle";
+
+        resize_on_border = true;
       };
 
       decoration = {
