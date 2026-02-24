@@ -99,6 +99,10 @@
             "󰂂"
             "󰁹"
           ];
+          events = {
+            on-discharging-warning = "notify-send -u normal -a 'BATTERY WARNING' '' \"$(acpi -b | cut -d ' ' -f 4-)\"";
+            on-discharging-critical = "notify-send -u critical -a 'BATTERY WARNING' '' \"$(acpi -b | cut -d ' ' -f 4-)\"";
+          };
           on-click = "";
           tooltip = true;
         };
@@ -124,7 +128,7 @@
         min-height: 35px;
       }
       window#waybar {
-        background: rgba(20,20,20,0.6);
+        background: rgba(20,20,20,0.75);
       }
       #workspaces {
         margin: 0px 0px;

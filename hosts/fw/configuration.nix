@@ -108,6 +108,7 @@
     wget
     gcc
     neofetch
+    acpi
 
     # nix utilities
     nixfmt-classic
