@@ -1,21 +1,22 @@
 { config, pkgs, ... }:
 
 {
-  #programs.waybar.style = (builtins.readFile ../sources/waybar.css);
   programs.waybar = {
     enable = true;
     settings = [
       {
         layer = "top";
         position = "top";
-        modules-left = [ "niri/workspaces" ];
-        modules-center = [ "niri/window" ];
+        modules-left = [
+          "niri/workspaces"
+          "niri/window"
+        ];
+        modules-center = [ "clock" ];
         modules-right = [
           "tray"
           "pulseaudio"
           "backlight"
           "battery"
-          "clock"
         ];
 
         "niri/workspaces" = {
@@ -27,14 +28,11 @@
           };
         };
         "clock" = {
-          format = "󰥔 {:L%H:%M}";
+          format = "󰃭 {:%Y-%m-%d  󰥔 %R}";
           tooltip = true;
-          tooltip-format = ''
-            <small>{:%A, %b %d %Y }</small>
-            <tt><small>{calendar}</small></tt>'';
         };
         "niri/window" = {
-          max-length = 50;
+          max-length = 40;
         };
         "tray" = {
           icon-size = 20;
@@ -120,17 +118,17 @@
     style = ''
       * {
         font-family: JetBrainsMono Nerd Font;
-        font-size: 16px;
+        font-size: 15px;
         border-radius: 0px;
         border: none;
-        min-height: 0px;
+        min-height: 35px;
       }
       window#waybar {
         background: rgba(20,20,20,0.6);
       }
       #workspaces {
-        margin: 4px 4px;
-        padding: 5px 5px;
+        margin: 0px 0px;
+        padding: 0px 0px;
         border-radius: 16px;
       }
       #workspaces button {
@@ -156,17 +154,17 @@
       tooltip {
         border-radius: 12px;
       }
-      #window, #pulseaudio, #battery, #tray, #backlight, #clock {
+      #window, #pulseaudio, #battery, #tray, #backlight {
         font-weight: bold;
         margin: 0px;
         padding: 0px 10px;
         border-radius: 24px 10px 24px 10px;
       }
-      #clocks {
+      #clock {
         font-weight: bold;
         margin: 0px;
         padding: 0px 10px;
-        border-radius: 0px 0px 0px 40px;
+        border-radius: 0px 0px 0px 0px;
       }
     '';
   };
