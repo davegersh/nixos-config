@@ -123,6 +123,7 @@
     # rust
     cargo
     rustc
+    rust-analyzer
   ];
 
   # Open network ports

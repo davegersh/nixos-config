@@ -11,25 +11,26 @@
         modules-left = [ "niri/workspaces" ];
         modules-center = [ "niri/window" ];
         modules-right = [
-          "pulseaudio"
-          "battery"
           "tray"
+          "pulseaudio"
+          "backlight"
+          "battery"
           "clock"
         ];
 
         "niri/workspaces" = {
-          format = "{icon}";
+          format = "<big>{icon}</big>";
           format-icons = {
-            active = "";
+            active = "";
             default = "";
             urgent = "";
           };
         };
         "clock" = {
-          format = " {:L%H:%M}";
+          format = "󰥔 {:L%H:%M}";
           tooltip = true;
           tooltip-format = ''
-            <big>{:%A, %d.%B %Y }</big>
+            <small>{:%A, %b %d %Y }</small>
             <tt><small>{calendar}</small></tt>'';
         };
         "niri/window" = {
@@ -40,10 +41,10 @@
           spacing = 12;
         };
         "pulseaudio" = {
-          format = "{icon}  {volume}% {format_source}";
-          format-bluetooth = "{volume}% {icon} {format_source}";
-          format-bluetooth-muted = " {icon} {format_source}";
-          format-muted = " {format_source}";
+          format = "{icon} {volume}%  {format_source}";
+          format-bluetooth = "{volume}% {icon}  {format_source}";
+          format-bluetooth-muted = " {icon}  {format_source}";
+          format-muted = "  {format_source}";
           format-source = " {volume}%";
           format-source-muted = "";
           format-icons = {
@@ -59,7 +60,7 @@
               ""
             ];
           };
-          on-click = "sleep 0.1 && pavucontrol";
+          on-click = "sleep 0.05 && pavucontrol";
         };
         "custom/notification" = {
           tooltip = false;
@@ -103,12 +104,22 @@
           on-click = "";
           tooltip = true;
         };
+        "backlight" = {
+          tooltip = false;
+          device = "intel_backlight";
+          format = "{icon} {percent}%";
+          format-icons = [
+            "󰃞"
+            "󰃟"
+            "󰃠"
+          ];
+        };
       }
     ];
 
     style = ''
       * {
-        font-family: JetBrainsMono Nerd Font Mono;
+        font-family: JetBrainsMono Nerd Font;
         font-size: 16px;
         border-radius: 0px;
         border: none;
@@ -145,16 +156,16 @@
       tooltip {
         border-radius: 12px;
       }
-      #window, #pulseaudio, #battery, #tray {
+      #window, #pulseaudio, #battery, #tray, #backlight, #clock {
         font-weight: bold;
         margin: 0px;
         padding: 0px 10px;
         border-radius: 24px 10px 24px 10px;
       }
-      #clock {
+      #clocks {
         font-weight: bold;
         margin: 0px;
-        padding: 0px 15px 0px 15px;
+        padding: 0px 10px;
         border-radius: 0px 0px 0px 40px;
       }
     '';
