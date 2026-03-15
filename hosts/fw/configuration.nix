@@ -81,6 +81,7 @@
       "networkmanager"
       "wheel"
       "audio"
+      "ollama"
     ];
     packages = with pkgs; [ ];
   };
@@ -99,6 +100,9 @@
   virtualisation.libvirtd.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
+  hardware.graphics.enable = true; # or hardware.opengl.enable for older NixOS versions
+  hardware.graphics.extraPackages = [ pkgs.rocmPackages.clr.icd ];
+
   # Packages
   environment.systemPackages = with pkgs; [
     # essentials
@@ -111,9 +115,10 @@
     acpi
 
     # nix utilities
-    nixfmt-classic
+    nixfmt
     nil
     nh
+    nixd
 
     # utilities
     peek
@@ -125,7 +130,15 @@
     cargo
     rustc
     rust-analyzer
+    rustfmt
   ];
+
+  services.ollama = {
+    enable = true;
+    rocmOverrideGfx = "11.0.3";
+  };
+
+  environment.variables.HSA_OVERRIDE_GFX_VERSION = "11.0.3";
 
   # Open network ports
   networking.firewall.allowedTCPPorts = [

@@ -22,8 +22,8 @@
     protonmail-desktop
 
     swww # background manager
-    xfce.thunar
-    xfce.thunar-volman
+    thunar
+    thunar-volman
 
     prismlauncher
     bat
@@ -53,7 +53,7 @@
 
   home.sessionVariables = {
     EDITOR = "hx";
-    BROWSER = "chromium";
+    BROWSER = "firefox";
     TERMINAL = "kitty";
   };
 

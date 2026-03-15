@@ -17,6 +17,7 @@
     shellIntegration.enableZshIntegration = true;
     shellIntegration.enableBashIntegration = true;
 
-    theme = "Gruvbox Dark Hard";
+    themeFile = "gruvbox-dark-hard";
+
   };
 }

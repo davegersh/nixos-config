@@ -6,12 +6,4 @@
   };
 
   programs.xwayland.enable = true;
-  # xdg.portal = {
-  #  enable = true;
-  # config = {
-  #  common = {
-  #   "org.freedesktop.impl.portal.FileChooser" = "gtk";
-  # };
-  #};
-  #};
 }
