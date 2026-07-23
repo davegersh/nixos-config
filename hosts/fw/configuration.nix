@@ -111,7 +111,7 @@
     git
     wget
     gcc
-    neofetch
+    fastfetch
     acpi
 
     # nix utilities
@@ -125,12 +125,19 @@
     brightnessctl
     eza
     libreoffice
+    onlyoffice-desktopeditors
 
     # rust
     cargo
     rustc
     rust-analyzer
     rustfmt
+    clippy
+    bacon
+    cargo-nextest
+
+    # ai
+    opencode
   ];
 
   services.ollama = {
@@ -152,6 +159,19 @@
     6001
     7011
   ];
+
+  # # time-expansion:
+  # networking.hosts = {
+  #   "127.0.0.1" = [
+  #     "localhost"
+  #     "reddit.com"
+  #     "www.reddit.com"
+  #     "old.reddit.com"
+  #     "redditmedia.com"
+  #     "oauth.reddit.com"
+  #   ];
+  #   "::1" = [ "localhost" ];
+  # };
 
   # To enable network-discovery
   services.avahi = {

@@ -1,6 +1,7 @@
 {
   config,
   pkgs,
+  pkgs-stable,
   inputs,
   ...
 }:
@@ -13,30 +14,38 @@
 
   imports = [ inputs.self.outputs.homeManagerModules.default ];
 
-  home.packages = with pkgs; [
-    spotify
-    discord
-    obsidian
+  home.packages =
+    (with pkgs; [
+      # Unstable Packages
+      spotify
+      discord
+      obsidian
 
-    protonvpn-gui
-    protonmail-desktop
+      protonvpn-gui
+      protonmail-desktop
 
-    swww # background manager
-    thunar
-    thunar-volman
+      awww # background manager
+      thunar
+      thunar-volman
 
-    prismlauncher
-    bat
+      prismlauncher
+      bat
 
-    ticktick
+      ticktick
 
-    transcribe
+      transcribe
 
-    obs-studio
-    vlc
+      obs-studio
+      vlc
 
-    zed-editor
-  ];
+      zed-editor
+      rmpc
+      gamescope
+    ])
+    ++ (with pkgs-stable; [
+      # Stable Packages:
+
+    ]);
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -55,6 +64,35 @@
     EDITOR = "hx";
     BROWSER = "firefox";
     TERMINAL = "kitty";
+  };
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "application/pdf" = "onlyoffice-desktopeditors.desktop";
+      "text/html" = "firefox.desktop";
+      "image/png" = "firefox.desktop";
+      "image/jpeg" = "firefox.desktop";
+      "image/webp" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
+      "x-scheme-handler/about" = "firefox.desktop";
+      "x-scheme-handler/unknown" = "firefox.desktop";
+    };
+  };
+
+  services.mpd = {
+    enable = true;
+    musicDirectory = "${config.home.homeDirectory}/Music";
+    # Optional: automatically start when a client tries to connect
+    network.startWhenNeeded = true;
+    extraConfig = ''
+      audio_output {
+        type "pipewire"
+        name "PipeWire Sound Server"
+      }
+      auto_update "yes"
+    '';
   };
 
   # Let Home Manager install and manage itself.

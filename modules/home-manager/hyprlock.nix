@@ -13,8 +13,8 @@
 
       background = [
         {
-          path = "$HOME/nixos-config/wallpapers/webb_ngc602.jpg";
-          blur_passes = 1;
+          path = "$HOME/nixos-config/wallpapers/artemis2_term.jpg";
+          blur_passes = 0;
           blur_size = 8;
         }
       ];
