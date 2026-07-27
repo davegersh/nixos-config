@@ -19,5 +19,6 @@
     ./mako.nix
     ./zellij.nix
     ./fuzzel.nix
+    ./niri.nix
   ];
 }
