@@ -41,6 +41,8 @@
       zed-editor
       rmpc
       gamescope
+
+      inkscape
     ])
     ++ (with pkgs-stable; [
       # Stable Packages:
@@ -55,8 +57,8 @@
 
   home.pointerCursor = {
     gtk.enable = true;
-    package = pkgs.hackneyed;
-    name = "Hackneyed";
+    package = pkgs.chicago95;
+    name = "Chicago95";
     size = 24;
   };
 
@@ -78,6 +80,8 @@
       "x-scheme-handler/https" = "firefox.desktop";
       "x-scheme-handler/about" = "firefox.desktop";
       "x-scheme-handler/unknown" = "firefox.desktop";
+      "inode/directory" = [ "thunar.desktop" ];
+      "x-scheme-handler/file" = [ "thunar.desktop" ];
     };
   };
 

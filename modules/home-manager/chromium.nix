@@ -12,8 +12,4 @@
       { id = "ghmbeldphafepmbegfdlkpapadhbakde"; } # Proton Pass
     ];
   };
-
-  nixpkgs.config = {
-    chromium.enableWideVine = true;
-  };
 }

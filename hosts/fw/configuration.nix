@@ -91,7 +91,9 @@
 
   programs.dconf.enable = true;
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
 
   # Virtual Machines
   programs.virt-manager.enable = true;
